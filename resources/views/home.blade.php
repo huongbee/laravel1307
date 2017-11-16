@@ -9,10 +9,29 @@
 
 <p>
 <?php 
+
     //print_r($arr);
     foreach($arr as $item){
         echo $item;
+    
         echo "<br>";
+    
     }
+
+    
 ?>
+
+<?php foreach($arr as $item): ?>
+        <?=$item;?>
+    
+       <br>
+<?php  endforeach ?>
+
+@foreach($arr as $item)
+    {{$item}}
+    <br>
+@endforeach
+
 </p>
+
+<a href="{{route('sanpham')}}">Sản Phẩm</a> | <a href="san-pham">Sản Phẩm </a>

@@ -71,5 +71,15 @@ Route::get('/',[
 
 Route::get('san-pham',[
     'uses'=>'HomeController@getProduct',
-    'as'=>'sanpham'
+])->name('sanpham');
+
+// Route::get('{alias}/{id}.html',[
+//     'uses'=>'HomeController@getProduct2',
+//     'as'=>'chitiet'
+// ]);
+
+
+Route::get('{id}/{alias}.html',[
+    'uses'=>'HomeController@getProduct2',
+    'as'=>'chitiet'
 ]);

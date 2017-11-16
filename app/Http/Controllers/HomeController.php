@@ -15,6 +15,20 @@ class HomeController extends Controller
 
     public function getProduct(){
         //return redirect()->route('trangchu');
-        return view('pages.product');
+        $alias = "san-pham-1";
+        $id = 1;
+        return view('pages.product',compact('alias','id'));
+    }
+
+    // public function getProduct2($alias2,$maSP){
+    //     echo $alias2;
+    //     echo "</br>";
+    //     echo $maSP;
+    // }
+    
+    public function getProduct2(Request $request){        
+        echo $request->alias;
+        echo "</br>";
+        echo $request->id;
     }
 }
