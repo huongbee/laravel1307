@@ -83,3 +83,31 @@ Route::get('{id}/{alias}.html',[
     'uses'=>'HomeController@getProduct2',
     'as'=>'chitiet'
 ]);
+
+
+//View::share('name','KPT');
+
+Route::view('call-view','name-view');
+
+
+Route::get('set-cookie',[
+    'uses'=>'HomeController@setCookie',
+    'as'=>'set-cookie'
+]);
+
+Route::get('get-cookie',[
+    'uses'=>'HomeController@getCookie',
+    'as'=>'get-cookie'
+]);
+
+
+Route::get('set-session',[
+    'uses'=>'HomeController@setSession',
+    'as'=>'set-session'
+]);
+
+Route::get('get-session',[
+    'uses'=>'HomeController@getSession',
+    'as'=>'get-session'
+]);
+
