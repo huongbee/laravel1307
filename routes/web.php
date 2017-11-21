@@ -111,3 +111,32 @@ Route::get('get-session',[
     'as'=>'get-session'
 ]);
 
+
+
+Route::get('create-product-table',function(){
+    Schema::create('product',function($table){
+        $table->increments('id');
+        $table->string('name',100);
+        $table->float('price');
+    });
+    echo "created";
+});
+
+
+Route::get('update-product-table',function(){
+    Schema::table('product',function($table){
+        $table->timestamps();
+    });
+    echo "updated!";
+});
+
+
+
+Route::get('update-column-product-table',function(){
+    Schema::table('product',function($table){
+        //$table->float('price',6,2)->change();
+        //$table->string('name',200)->change();
+        $table->dropColumn('price');
+    });
+    echo "column updated!";
+});
