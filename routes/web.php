@@ -140,3 +140,6 @@ Route::get('update-column-product-table',function(){
     });
     echo "column updated!";
 });
+
+////////////route post , input, form , upload file
+/////////////////////
