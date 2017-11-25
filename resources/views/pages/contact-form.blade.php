@@ -12,6 +12,22 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-6">
 				<h2>Contact Form</h2>
+				@if(Session::has('error'))
+					<div class="alert alert-danger">{{Session::get('error')}}</div>
+
+				@endif
+				
+
+				{{-- @if($errors->any())
+					<div class="alert alert-danger">
+				        <ul>
+				            @foreach ($errors->all() as $error)
+				                <li>{{ $error }}</li>
+				            @endforeach
+				        </ul>
+				    </div>
+
+				@endif --}}
 				<form method="POST" action="{{route('contact-form')}}" enctype="multipart/form-data">
 					  <div class="form-group">
 					    <label for="">Fullname</label>
@@ -47,6 +63,9 @@
 					  {{-- WhgHgoBtGzDCMhm3B2l22HunN6FgzvSRC8JfucMz --}}
 
 					</form>
+					@if(Session::has('error2'))
+						<div class="alert alert-danger">{{Session::get('error2')}}</div>
+					@endif
 			</div>
 		</div>
 	</div>

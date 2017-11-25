@@ -101,16 +101,27 @@ class HomeController extends Controller
         if($req->hasFile('image')){
             $file = $req->file('image');
 
-            //checkFileSize <= 100kb = 102400
-            //png/jpg/gif
-            echo $file->getSize();//144677 //87956
-
-            die;
-
-            
             // echo "<pre>";
             // print_r($file);
             // echo "</pre>";
+
+            //checkFileSize <= 100kb = 102400
+            //png/jpg/gif
+            $size = $file->getSize();//144677 //87956
+            if($size > 102400){
+                //return redirect()->back();
+                return redirect()->route('contact-form')->with('error','File quá lớn');
+            }
+
+            $arrExt = ['png','jpg','gif'];
+            $ext = $file->getClientOriginalExtension();
+            if(!in_array($ext, $arrExt)){
+                return redirect()->route('contact-form')->with([
+                    'error'=>'File không được chọn!',
+                    'error2'=>'File 2 không được chọn!'
+                ]);
+            }
+            
             $name = $file->getClientOriginalName();
             //$newName = time().'-'.$name;
             $newName = date('Y-m-d').'-'.date('H-i-s').'-'.$name;
