@@ -80,4 +80,8 @@ class HomeController extends Controller
     public function getFormContact(){
         return view('pages.contact-form');
     }
+
+    public function postFormContact(){
+        echo 234567;
+    }
 }

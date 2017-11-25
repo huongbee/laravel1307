@@ -12,31 +12,36 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-6">
 				<h2>Contact Form</h2>
-				<form method="POST" action="">
-
+				<form method="POST" action="{{route('contact-form')}}">
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">Fullname</label>
-					    <input type="text" class="form-control" placeholder="Enter your fullname">
+					    <input type="text" name="fullname" class="form-control" placeholder="Enter your fullname">
 					  </div>
 
 					  <div class="form-group">
 					    <label for="exampleInputEmail1">Email address</label>
-					    <input type="email" class="form-control" placeholder="Enter email">
+					    <input type="email" name="email" class="form-control" placeholder="Enter email">
 					  </div>
 
 
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">Title</label>
-					    <input type="text" class="form-control" placeholder="Enter title">
+					    <input type="text" name="title" class="form-control" placeholder="Enter title">
 					  </div>
 
 
 					  <div class="form-group">
 					    <label for="exampleInputPassword1">Message</label>
-					    <textarea name="" class="form-control"></textarea>
+					    <textarea name="message" class="form-control"></textarea>
 					  </div>
 
 					  <button type="submit" class="btn btn-primary">Send</button>
+
+					  {{csrf_field()}}
+					  {{-- <input type="hidden" name="_token" value="{{csrf_token()}}"> --}}
+
+					  {{-- WhgHgoBtGzDCMhm3B2l22HunN6FgzvSRC8JfucMz --}}
+
 					</form>
 			</div>
 		</div>

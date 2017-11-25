@@ -148,3 +148,9 @@ Route::get('contact-form',[
     'uses'=>'HomeController@getFormContact',
     'as'=>'contact-form'
 ]);
+
+
+Route::post('contact-form',[
+    'uses'=>'HomeController@postFormContact',
+    'as'=>'contact-form'
+]);
