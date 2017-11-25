@@ -12,27 +12,31 @@
 		<div class="row justify-content-center">
 			<div class="col-lg-6">
 				<h2>Contact Form</h2>
-				<form method="POST" action="{{route('contact-form')}}">
+				<form method="POST" action="{{route('contact-form')}}" enctype="multipart/form-data">
 					  <div class="form-group">
-					    <label for="exampleInputPassword1">Fullname</label>
+					    <label for="">Fullname</label>
 					    <input type="text" name="fullname" class="form-control" placeholder="Enter your fullname">
 					  </div>
 
 					  <div class="form-group">
-					    <label for="exampleInputEmail1">Email address</label>
+					    <label for="">Email address</label>
 					    <input type="email" name="email" class="form-control" placeholder="Enter email">
 					  </div>
 
 
 					  <div class="form-group">
-					    <label for="exampleInputPassword1">Title</label>
+					    <label for="">Title</label>
 					    <input type="text" name="title" class="form-control" placeholder="Enter title">
 					  </div>
 
 
 					  <div class="form-group">
-					    <label for="exampleInputPassword1">Message</label>
+					    <label>Message</label>
 					    <textarea name="message" class="form-control"></textarea>
+					  </div>
+
+					  <div class="form-group">
+					    <input type="file" name="image" >
 					  </div>
 
 					  <button type="submit" class="btn btn-primary">Send</button>

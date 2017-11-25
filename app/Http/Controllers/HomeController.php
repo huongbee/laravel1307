@@ -81,7 +81,51 @@ class HomeController extends Controller
         return view('pages.contact-form');
     }
 
-    public function postFormContact(){
-        echo 234567;
-    }
+    public function postFormContact(Request $req){
+        //echo $req->fullname;
+        echo $req->input('fullname', "Tên người dùng");
+        echo "<hr>";
+
+        echo $req->email;
+        echo "<hr>";
+
+        echo $req->title;
+        echo "<hr>";
+
+        echo $req->message;
+        echo "<hr>";
+
+        //$data = $req->all();
+
+        //echo $req->image; //chỉ nhận được file ở thư mục tạm
+        if($req->hasFile('image')){
+            $file = $req->file('image');
+
+            //checkFileSize <= 100kb = 102400
+            //png/jpg/gif
+            echo $file->getSize();//144677 //87956
+
+            die;
+
+            
+            // echo "<pre>";
+            // print_r($file);
+            // echo "</pre>";
+            $name = $file->getClientOriginalName();
+            //$newName = time().'-'.$name;
+            $newName = date('Y-m-d').'-'.date('H-i-s').'-'.$name;
+            //$ext = $file->extension();
+
+            //$ext_2 = $file->getClientOriginalExtension();
+            //echo $ext; 
+
+            
+            $file->move('images',$newName);
+            echo "Uploaded!";
+        }
+        else{
+            echo "Bạn chưa chọn file";
+        }
+        
+    }   
 }
