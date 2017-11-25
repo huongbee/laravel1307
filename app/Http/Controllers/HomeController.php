@@ -74,4 +74,10 @@ class HomeController extends Controller
     function getSession(Request $request){
         echo  $request->session()->get('password','2345678943455656');
     }
+
+
+
+    public function getFormContact(){
+        return view('pages.contact-form');
+    }
 }

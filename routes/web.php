@@ -143,3 +143,8 @@ Route::get('update-column-product-table',function(){
 
 ////////////route post , input, form , upload file
 /////////////////////
+
+Route::get('contact-form',[
+    'uses'=>'HomeController@getFormContact',
+    'as'=>'contact-form'
+]);
